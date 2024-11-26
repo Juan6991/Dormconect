@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ViUniGo - Informacion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/movil.css" />
+    <link rel="stylesheet" href="categorias.html">
+    <link rel="icon" href="/img/Icon.png" type="image/x-icon" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <!-- Logo -->
+        <a href="index.html">
+          <img src="/img/Logo-blank.png" alt="Logo ViUniGo" />
+        </a>
+      </div>
+      <nav class="menu-categorias">
+        <ul class="menu">
+          <li><a href="categorias.html">Barranquilla</a></li>
+          <li><a href="categorias.html">Montería</a></li>
+          <li><a href="categorias.html">Cartagena</a></li>
+          <li><a href="categorias.html">Medellín</a></li>
+          <li><a href="categorias.html">Bogotá</a></li>
+          <li><a href="categorias.html">Santa Marta</a></li>
+          <li><a href="#historia">Nuestra historia</a></li>
+          <li><a href="/frontend/contacto.html">Contacta con nosotros aquí!</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+
+    <div class="menu-slider">
+      <div class="slide">
+        <a href="apartamentosc.html">
+          <img src="../img/pension1.jpg" alt="Categoría 1" loading="lazy" />
+          <div class="slide-text">Apartamentos compartidos</div>
+        </a>
+      </div>
+      <div class="slide">
+        <a href="apartamentosc.html">
+          <img src="/img/pension3.jpg" alt="Categoría 2" loading="lazy"/>
+          <div class="slide-text">Arriendos</div>
+        </a>
+      </div>
+      <div class="slide">
+        <a href="apartamentosc.html">
+          <img src="/img/pension2.jpg" alt="Categoría 3" loading="lazy"/>
+          <div class="slide-text">Cuartos Compartidos</div>
+        </a>
+      </div>
+      <div class="slide">
+        <a href="apartamentosc.html">
+          <img src="/img/pension1.jpg" alt="Categoría 4"loading="lazy" />
+          <div class="slide-text">Cuartos Individuales</div>
+        </a>
+      </div>
+    </div>
+
+    <h1>ViUniGo: Vive tu estadia Universitaria en el mejor Sitio</h1>
+
+    <div id="galeria-2" class="galeria-2">
+      <!-- Imagen principal -->
+      <img class="imagen-principal" src="../img/barranquilla.jpg" alt="Imagen Principal">
+
+      <!-- Cinco imágenes más pequeñas -->
+        <img class="imagen-pequena" src="/img/Apartamento-compartido.jpg" alt="Imagen 1" loading="lazy">
+        <img class="imagen-pequena" src="/img/pension2.jpg" alt="Imagen 2" loading="lazy">
+        <img class="imagen-pequena" src="/img/Apartamento-compartido.jpg" alt="Imagen 3" loading="lazy">
+        <img class="imagen-pequena" src="https://via.placeholder.com/300x150" alt="Imagen 4" loading="lazy">
+        <img class="imagen-pequena" src="https://via.placeholder.com/300x150" alt="Imagen 5" loading="lazy">
+        <img class="imagen-pequena" src="https://via.placeholder.com/300x150" alt="Imagen 6" loading="lazy">
+      <!-- Texto descriptivo -->
+  </div>
+
+  <div id="modal" class="modal">
+    <span class="cerrar-modal">&times;</span>
+    <img class="modal-contenido" id="imagen-ampliada" src="" alt="Imagen Ampliada">
+
+    <button class="btn-anterior" onclick="cambiarImagen(-1)">&#10094;</button>
+    <button class="btn-siguiente" onclick="cambiarImagen(1)">&#10095;</button>
+    
+  </div>
+
+    <!-- Contenedor para mostrar la información detallada de la pensión -->
+    <div id="informacion-pension" class="informacion-pension">
+      <!-- Aquí se mostrará la información detallada -->
+      <p class="descripcion">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget est ut arcu hendrerit cursus.
+        Vivamus vel ante vel orci aliquet congue ac eget quam. In hac habitasse platea dictumst.
+        Sed eu felis ut arcu hendrerit cursus vitae sit amet lectus. Duis pharetra efficitur gravida.
+        Curabitur aliquam risus vel augue vulputate tincidunt.
+    </p>
+    </div>
+    <div id="imagen-modal" class="modal">
+      <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+      <img class="modal-contenido" id="imagen-ampliada">
+      <div class="navegacion-modal">
+          <a class="anterior" onclick="cambiarImagen(-1)">&#10094;</a>
+          <a class="siguiente" onclick="cambiarImagen(1)">&#10095;</a>
+      </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-contenido">
+      <div class="footer-columna">
+        <h3>Contacto</h3>
+        <p>Correo: <a href="mailto:info@viunigo.com">info@viunigo.com</a></p>
+        <p>Teléfono: <a href="tel:+123456789">+123456789</a></p>
+      </div>
+      <div class="footer-columna">
+        <h3>Redes Sociales</h3>
+        <ul class="redes-sociales">
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-derechos">
+      <p>&copy; 2024 ViUniGo. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <script src="/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  </body>
+</html>

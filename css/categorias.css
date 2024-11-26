@@ -1,0 +1,148 @@
+/* General */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Menú de Categorías */
+  /* Menú categorías */
+.menu-categorias {
+  width: 100%; /* Asegura que el menú ocupe todo el ancho del header */
+  overflow: hidden; /* Previene que los elementos se salgan del contenedor */
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around; /* Espacia los elementos del menú uniformemente */
+  align-items: center;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en una nueva línea si es necesario */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin: 5px 0; /* Espaciado entre elementos en pantallas pequeñas */
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333; /* Color del texto */
+  font-size: 16px; /* Ajusta el tamaño de fuente */
+  padding: 10px 15px; /* Espaciado interno */
+  display: block;
+  text-align: center; /* Centra el texto */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu li a:hover {
+  background-color: #007bff; /* Fondo al pasar el cursor */
+  color: #fff; /* Texto blanco al pasar el cursor */
+}
+
+/* Estilos responsivos para móviles */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+  }
+
+  .menu li a {
+    font-size: 14px; /* Reduce el tamaño de fuente para pantallas pequeñas */
+    padding: 8px 10px; /* Ajusta el espaciado interno */
+    width: 100%; /* Asegura que los enlaces ocupen todo el ancho */
+  }
+}
+
+/* Estilos generales */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #89c3eb; /* Color de fondo del header */
+}
+
+.logo img {
+  height: 50px;
+}
+
+/* Botón hamburguesa */
+.hamburguesa {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none; /* Ocultar en pantallas grandes */
+}
+
+/* Menú */
+.menu-categorias {
+  position: relative;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #89c3eb;
+}
+
+/* Estilo de los enlaces */
+.menu li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu li a:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Vista móvil: Menú oculto inicialmente */
+@media (max-width: 768px) {
+  .hamburguesa {
+    display: block; /* Mostrar botón hamburguesa */
+  }
+  .menu {
+    display: none; /* Ocultar menú inicialmente */
+    flex-direction: column; /* Alinear enlaces verticalmente */
+    position: absolute;
+    top: 60px; /* Espaciado debajo del header */
+    right: 0;
+    width: 100%; /* Menú ocupa todo el ancho */
+    background-color: #89c3eb;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  .menu.abierto {
+    display: flex; /* Mostrar menú cuando se activa */
+  }
+
+  .menu li {
+    text-align: center;
+  }
+
+  .menu li a {
+    font-size: 18px;
+    padding: 10px;
+  }
+}

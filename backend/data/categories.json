@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "name": "Habitaciones",
+      "description": "Aquí encontrarás las mejores habitaciones para ti.",
+      "image": "/img/cuarto-individual.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Pensiones",
+      "description": "Explora nuestras opciones de pensiones accesibles y cómodas.",
+      "image": "/img/Pension.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Independientes",
+      "description": "Espacios independientes para mayor privacidad y comodidad.",
+      "image": "/img/Habitacion-Independiente.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Casas",
+      "description": "Encuentra casas completas ideales para familias o grupos.",
+      "image": "/img/pension2.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Hoteles",
+      "description": "Hospédate en los mejores hoteles con servicios exclusivos.",
+      "image": "/img/pension3.jpg"
+    }
+  ]
+  

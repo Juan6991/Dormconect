@@ -1,2 +1,2 @@
-# Dormconect
-Reservation web
+# ViUniGo
+Aplicativo viviendas universitarias

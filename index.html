@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="/css/style2.css">
+    <link rel="icon" href="/img/Icon.png" type="image/x-icon">
+    <meta name="description" content="Encuentra las mejores habitaciones, pensiones y casas en tu ciudad favorita.">
+    <meta name="keywords" content="Pension, Habitacion, Apartamento, Arriendos, Inmuebles, Bienes Inmuebles, Estadias, ViUniGo">
+
+</head>
+<body>
+    <div class="login-container">
+        <div class="signin-signup">
+            <form action="frontend/index.html" class="sign-in-form">
+                <h2>Iniciar sesión</h2>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" name="username" placeholder="Usuario" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password"  placeholder="Contraseña">
+                </div>
+                <button type="submit">Iniciar sesión</button>
+                <p class="social-text">O Inicia Sesion Desde tus Redes Sociales</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <P class="account-text" >¿No tienes una cuenta? <a href="#" id="sign-in-btn2"> Registrate aqui</a> </P>
+            </form>
+            <form action="index.html" class="sign-up-form">
+                <h2>Registrarse</h2>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" name="username" placeholder="Usuario" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" id="Email" name="Email" placeholder="Correo" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                </div>
+                <button type="submit">Registrarse</button>
+                
+                <p class="social-text">O Inicia Sesion Desde tus Redes Sociales</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <P class="account-text" >¿Ya tienes una cuenta? <a href="#" id="sign-up-btn2"> Inicia Sesion aqui</a> </P>
+            </form>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Member of Brand?</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis autem in, numquam blanditiis aliquid quod soluta vero quo perferendis laboriosam totam tenetur quos voluptas at sunt iste corporis optio. Unde.</p>
+                    <button class="btn" id="sign-in-btn" >Sign in</button>
+                </div>
+                <img src="/img/ViUniGo_Icon.png" alt="" class="images">
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>New to Brand?</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis autem in, numquam blanditiis aliquid quod soluta vero quo perferendis laboriosam totam tenetur quos voluptas at sunt iste corporis optio. Unde.</p>
+                    <button class="btn" id="sign-up-btn">Sign up</button>
+                </div>
+                <img src="/img/ViUniGo_Icon.png" alt="" class="images">
+            </div>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

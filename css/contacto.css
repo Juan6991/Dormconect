@@ -1,0 +1,104 @@
+.contacto {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .contacto h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .contacto p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .contacto form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #444;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #007bff;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  .btn-enviar {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-enviar:hover {
+    background-color: #0056b3;
+  }
+  /* Vista móvil: Menú oculto inicialmente */
+@media (max-width: 768px) {
+  .hamburguesa {
+    display: block; /* Mostrar botón hamburguesa */
+  }
+
+  .menu {
+    display: none; /* Ocultar menú inicialmente */
+    flex-direction: column; /* Alinear enlaces verticalmente */
+    position: absolute;
+    top: 60px; /* Espaciado debajo del header */
+    right: 0;
+    width: 100%; /* Menú ocupa todo el ancho */
+    background-color: #89c3eb;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  .menu.abierto {
+    display: flex; /* Mostrar menú cuando se activa */
+  }
+
+  .menu li {
+    text-align: center;
+  }
+
+  .menu li a {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
