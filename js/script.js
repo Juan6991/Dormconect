@@ -214,19 +214,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
-  const mysql = require('mysql');
+const express = require('express');
+const mysql = require('mysql');
 
-const connection = mysql.createConnection({
+const app = express();
+const port = 3306;
+
+const db = mysql.createConnection({
   host: '193.203.175.73', // Cambia al hostname proporcionado
   user: 'u570384874_designcreation', // Usuario creado
   password: 'Eldelas2cabezasdetoro*', // Contraseña creada
   database: 'u570384874_hospedaje'
 });
 
-connection.connect((err) => {
-  if (err) {
-    console.error('Error de conexión: ' + err.stack);
-    return;
-  }
-  console.log('Conectado a la base de datos.');
+db.connect((err) => {
+    if (err) {
+        console.error('Error de conexión: ' + err.stack);
+        return;
+    }
+    console.log('Conectado a la base de datos.');
+});
+
+app.get('/test-db', (req, res) => {
+    db.query('SELECT * FROM users', (err, results) => {
+        if (err) {
+            res.status(500).send('Error en la consulta: ' + err);
+        } else {
+            res.json(results);
+        }
+    });
+});
+
+app.listen(port, () => {
+    console.log(`Servidor corriendo en http://localhost:${port}`);
 });

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <title>Crear Usuario</title>
+    <link rel="stylesheet" href="/css/style2.css">
+    <link rel="icon" href="/img/Icon.png" type="image/x-icon">
+    <meta name="description" content="Formulario para la creación de usuarios.">
+    <meta name="keywords" content="Crear Usuario, Registro, CRUD, Administración">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .create-user-container {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        .create-user-container h2 {
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #888888;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px 10px 10px 35px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: #007bff;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 0.9rem;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="create-user-container">
+        <h2>Crear Usuario</h2>
+        <form id="create-user-form">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="name" name="username" placeholder="Usuario" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" name="email" placeholder="Correo" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="text" id="phone" name="phone" placeholder="Teléfono">
+            </div>
+            <button type="submit">Crear Usuario</button>
+        </form>
+        <a href="index.html">Volver e Iniciar Sesión</a>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:3000'; // Cambia esto por tu endpoint real
+
+        // Manejar el envío del formulario para crear usuario
+        document.getElementById('create-user-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const phone = document.getElementById('phone').value;
+
+            try {
+                const response = await fetch(`${API_URL}/users`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, email, password, phone }),
+                });
+
+                if (response.ok) {
+                    alert('Usuario creado exitosamente');
+                    document.getElementById('create-user-form').reset();
+                } else {
+                    alert('Error al crear el usuario');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Hubo un problema al conectarse con el servidor');
+            }
+        });
+        const mysql = require('mysql');
+
+const connection = mysql.createConnection({
+  host: '193.203.175.73', // Cambia al hostname proporcionado
+  user: 'u570384874_designcreation', // Usuario creado
+  password: 'Eldelas2cabezasdetoro*', // Contraseña creada
+  database: 'u570384874_hospedaje'
+});
+
+connection.connect((err) => {
+  if (err) {
+    console.error('Error de conexión: ' + err.stack);
+    return;
+  }
+  console.log('Conectado a la base de datos.');
+});
+    </script>
+</body>
+</html>

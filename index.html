@@ -42,22 +42,25 @@
                 </div>
                 <P class="account-text" >¿No tienes una cuenta? <a href="#" id="sign-in-btn2"> Registrate aqui</a> </P>
             </form>
-            <form action="index.html" class="sign-up-form">
+            <form id="sign-up-form" class="sign-up-form">
                 <h2>Registrarse</h2>
                 <div class="input-group">
                     <i class="fas fa-user"></i>
-                    <input type="text" id="username" name="username" placeholder="Usuario" required>
+                    <input type="text" id="name" name="name" placeholder="Usuario" required>
                 </div>
                 <div class="input-group">
                     <i class="fas fa-envelope"></i>
-                    <input type="text" id="Email" name="Email" placeholder="Correo" required>
+                    <input type="email" id="email" name="email" placeholder="Correo" required>
                 </div>
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
                     <input type="password" id="password" name="password" placeholder="Contraseña" required>
                 </div>
+                <div class="input-group">
+                    <i class="fas fa-phone"></i>
+                    <input type="password" id="phone" name="phone" placeholder="Telefono" required>
+                </div>
                 <button type="submit">Registrarse</button>
-                
                 <p class="social-text">O Inicia Sesion Desde tus Redes Sociales</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
@@ -73,8 +76,50 @@
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
-                <P class="account-text" >¿Ya tienes una cuenta? <a href="#" id="sign-up-btn2"> Inicia Sesion aqui</a> </P>
+                <p class="account-text">¿Ya tienes una cuenta? <a href="#" id="sign-up-btn2"> Inicia Sesion aqui</a> </p>
             </form>
+            
+            <script>
+                const API_URL = 'srv1445.hstgr.io'; // Cambia esto por la URL de tu servidor
+            
+                // Manejar el evento "submit" del formulario de registro
+                document.getElementById('sign-up-form').addEventListener('submit', async (event) => {
+                    event.preventDefault(); // Evitar que el formulario recargue la página
+            
+                    // Obtener los datos del formulario
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const password = document.getElementById('password').value;
+                    const phone = document.getElementById('phone').value;
+            
+                    try {
+                        // Enviar los datos al servidor mediante fetch
+                        const response = await fetch(API_URL, {
+                            method: 'POST', // Método HTTP para crear un usuario
+                            headers: {
+                                'Content-Type': 'application/json', // Indicar que los datos se envían como JSON
+                            },
+                            body: JSON.stringify({ name, email, password,phone }), // Convertir los datos a JSON
+                        });
+            
+                        if (response.ok) {
+                            // Si la respuesta es exitosa
+                            const data = await response.json();
+                            alert('Usuario registrado exitosamente: ' + data.message); // Notificar al usuario
+                            document.getElementById('sign-up-form').reset(); // Limpiar el formulario
+                        } else {
+                            // Si hay un error, manejar la respuesta
+                            const errorData = await response.json();
+                            alert('Error al registrar usuario: ' + errorData.message);
+                        }
+                    } catch (error) {
+                        // Manejar errores de red o conexión
+                        console.error('Error al conectar con el servidor:', error);
+                        alert('Hubo un problema al registrar el usuario. Inténtalo de nuevo.');
+                    }
+                });
+            </script>
+            
         </div>
         <div class="panels-container">
             <div class="panel left-panel">
@@ -96,5 +141,6 @@
         </div>
     </div>
     <script src="/js/script.js"></script>
+    <script src="test_connection.js"></script>
 </body>
 </html>
