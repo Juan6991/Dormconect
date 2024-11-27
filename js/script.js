@@ -183,7 +183,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-  
+  document.addEventListener('DOMContentLoaded', function () {
+    // Todo tu código JS que manipula elementos del DOM aquí
+    
   // Validación del formulario
   document.querySelector("form").addEventListener("submit", function (event) {
     event.preventDefault(); // Evita el envío si hay errores
@@ -247,4 +249,39 @@ app.get('/test-db', (req, res) => {
 
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
+});
+const bodyParser = require('body-parser');
+
+// Middleware para parsear JSON
+app.use(bodyParser.json());
+
+// Habilitar CORS (si el frontend y backend están en dominios o puertos diferentes)
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*'); // Permitir solicitudes desde cualquier origen
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
+
+// Endpoint para registrar usuarios
+app.post('/api/users', (req, res) => {
+    const { username, email, password } = req.body;
+
+    // Validación de campos
+    if (!username || !email || !password) {
+        return res.status(400).json({ message: 'Todos los campos son obligatorios' });
+    }
+
+    // Simular guardado en la base de datos (reemplaza esto con tu lógica de base de datos)
+    console.log('Usuario recibido:', { username, email, password });
+
+    // Responder con éxito
+    res.status(201).json({ message: 'Usuario creado exitosamente' });
+});
+
+// Iniciar el servidor
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});
+
 });

@@ -141,6 +141,46 @@
         </div>
     </div>
     <script src="/js/script.js"></script>
-    <script src="test_connection.js"></script>
+    <script>
+    
+        document.getElementById('sign-up-form').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Evita la recarga de la página
+    
+            // Obtener valores del formulario
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+    
+            console.log('Datos a enviar:', { username, email, password }); // Log para verificar datos
+    
+            try {
+                // Enviar datos al backend
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, email, password }),
+                });
+    
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Respuesta del servidor:', data); // Log de la respuesta
+                    alert('Usuario registrado exitosamente: ' + data.message);
+                    document.getElementById('sign-up-form').reset(); // Limpiar el formulario
+                } else {
+                    // Si el servidor responde con un error
+                    const errorData = await response.json();
+                    console.error('Error del servidor:', errorData);
+                    alert('Error al registrar usuario: ' + errorData.message);
+                }
+            } catch (error) {
+                // Si ocurre un error en la conexión
+                console.error('Error en la conexión:', error);
+                alert('Hubo un problema al conectar con el servidor. Revisa la consola para más detalles.');
+            }
+        });
+    </script>
+    
 </body>
 </html>
