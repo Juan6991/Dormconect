@@ -3,7 +3,7 @@ const cors = require("cors");
 const categoriesRoutes = require("./routes/categories");
 
 const app = express();
-const PORT = 5000;
+const PORT = 3306;
 
 // Middleware
 app.use(cors()); // Para permitir peticiones desde el frontend

@@ -58,7 +58,7 @@
                 </div>
                 <div class="input-group">
                     <i class="fas fa-phone"></i>
-                    <input type="password" id="phone" name="phone" placeholder="Telefono" required>
+                    <input type="text" id="phone" name="phone" placeholder="Telefono" required>
                 </div>
                 <button type="submit">Registrarse</button>
                 <p class="social-text">O Inicia Sesion Desde tus Redes Sociales</p>
@@ -80,7 +80,7 @@
             </form>
             
             <script>
-                const API_URL = 'srv1445.hstgr.io'; // Cambia esto por la URL de tu servidor
+                const API_URL = '193.203.175.73'; // Cambia esto por la URL de tu servidor
             
                 // Manejar el evento "submit" del formulario de registro
                 document.getElementById('sign-up-form').addEventListener('submit', async (event) => {
@@ -94,7 +94,7 @@
             
                     try {
                         // Enviar los datos al servidor mediante fetch
-                        const response = await fetch(API_URL, {
+                        const response = await fetch("193.203.175.73", {
                             method: 'POST', // Método HTTP para crear un usuario
                             headers: {
                                 'Content-Type': 'application/json', // Indicar que los datos se envían como JSON
@@ -155,7 +155,7 @@
     
             try {
                 // Enviar datos al backend
-                const response = await fetch(API_URL, {
+                const response = await fetch("API_URL", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

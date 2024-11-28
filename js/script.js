@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const renderCategories = async () => {
     try {
       // Realiza la petición al backend
-      const response = await fetch("http://localhost:5000/api/categories");
+      const response = await fetch("http://localhost:3306/api/categories");
       const categories = await response.json();
   
       // Selecciona el elemento <main> donde se mostrarán las categorías
@@ -220,7 +220,7 @@ const express = require('express');
 const mysql = require('mysql');
 
 const app = express();
-const port = 3306;
+//const port = 3306;
 
 const db = mysql.createConnection({
   host: '193.203.175.73', // Cambia al hostname proporcionado
@@ -248,7 +248,7 @@ app.get('/test-db', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
+    console.log(`Servidor corriendo en http://193.203.175.73`);
 });
 const bodyParser = require('body-parser');
 
@@ -281,7 +281,7 @@ app.post('/api/users', (req, res) => {
 // Iniciar el servidor
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    console.log(`Servidor corriendo en http://127.0.0.1:3306`);
 });
 
 });
